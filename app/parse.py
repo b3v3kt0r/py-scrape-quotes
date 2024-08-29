@@ -18,7 +18,7 @@ class Quote:
 QUOTE_FIELDS = [field.name for field in fields(Quote)]
 
 
-def parse_one_quote(quote_soup) -> Quote:
+def parse_one_quote(quote_soup: BeautifulSoup) -> Quote:
     text = quote_soup.select_one(".text").text
     author = quote_soup.select_one(".author").text
     tags = quote_soup.select_one(".keywords")
